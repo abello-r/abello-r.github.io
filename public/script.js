@@ -34,8 +34,8 @@ function ft_token_info(api_token)
 let userAction = document.getElementById("username");
 let myImage = document.querySelector('img');
 
-userAction.onmouseover = () => ft_image_swap('src/alien.svg');
-userAction.onmouseleave = () => ft_image_swap('src/ovni.svg');
+userAction.onmouseover = () => ft_image_swap('src/astronauta.svg');
+userAction.onmouseleave = () => ft_image_swap('src/ordenador.svg');
 
 function ft_image_swap(path)
 {
@@ -49,9 +49,9 @@ function ft_image_swap(path)
 let user = undefined;
 let form = document.getElementById("form");
 
-form.onsubmit = (e) => ft_get_campus(e);
+form.onsubmit = (e) => ft_get_data_user(e);
 
-function ft_get_campus(e)
+function ft_get_data_user(e)
 {
 	user = document.getElementById("username").value;
 	if (e !== undefined)

@@ -22,8 +22,12 @@ if [ -f .env ]
 		read FILL_SECRET
 		echo "${GREEN}Received [${FILL_SECRET}] [OK] ${RESET}"
 		sleep 2s
-		echo -e "\n${GREEN}Your configuration is being created, now you can execute 'bash run.sh'...${RESET}"
+		echo -e "\n${GREEN}Your configuration is being created'...${RESET}"
+		sleep 1s
 		echo 'UID='$FILL_UID > .env
 		echo 'SECRET='$FILL_SECRET >> .env
 		echo 'URL=https://api.intra.42.fr/oauth/token' >> .env
 fi
+
+cd ..
+bash run.sh

@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(4, 4, 58);
+    background-color: rgb(45, 46, 45);
     perspective: 1000px;
 }
 
@@ -131,6 +131,7 @@
 	white-space: pre;
 }
 
+
 /***************************************************/
 
 
@@ -144,36 +145,25 @@
         width: 90%;
         height: 40px;
         cursor: pointer;
-        background: linear-gradient(650deg, rgb(20, 255, 204), rgb(124, 13, 228));
+        background: linear-gradient(650deg, rgb(255, 128, 0), rgb(238, 91, 48));
         margin-top: 35px;
-        border-radius: 15px;
-        animation-duration: 3s;
-        animation-name: apertura;
+		border-radius: 15px;
+		border-color: black;
+		font-weight: bold;
     }
 
 #button:hover
 {
-    letter-spacing: 2px;
-    background: linear-gradient(650deg, rgb(124, 13, 228), rgb(20, 255, 204));
-}
-
-@keyframes apertura
-{
-    from{
-        width: 30%;
-    }
-    to{
-        width: 90%;
-    }
+    background: linear-gradient(650deg, rgb(238, 91, 48), rgb(255, 128, 0));
 }
 
 @keyframes wave 
 {
     from{
-        color: rgb(124, 13, 228);
+        color: rgb(238, 91, 48);
     }
     to{
-        color: rgb(20, 255, 204);
+        color: rgb(255, 128, 0);
     }
 }
 
