@@ -1,0 +1,199 @@
+/* Control del formulario */
+
+.form-container
+{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(4, 4, 58);
+    perspective: 1000px;
+}
+
+.form-container form
+{
+	margin-top: -300px;
+    height: 350px;
+    width: 350px;
+    background: rgba(255,255,255,.1);
+    text-align: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 35px 15px rgba(0,0,0,.3);
+    border-top: 1px solid rgba(255,255,255,.3);
+    border-left: 1px solid rgba(255,255,255,.3);
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+}
+
+.form-container form h3
+{
+	font-size: 30px;
+	padding: 0px 0px;
+	color: #ccc;
+	letter-spacing: 3px;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: wave;
+	animation-duration: 3s;
+}
+
+.form-container form i
+{
+	padding: 0.5px;
+	font-size: 20px;
+	color: #bbb;
+}
+
+
+.form-container form input
+{
+	font-family: 'Times New Roman', Times, serif;
+	outline: none;
+	border: none;
+	height: 40px;
+	width: 82%;
+	background: rgba(0,0,0,.1);
+	color: rgba(255,255,255,.7);
+	box-shadow: 0 0 5px rgba(0,0,0,.5) inset;
+	font-size: 17px;
+	padding: 0 10px;
+	margin: 15px 0;
+	letter-spacing: 1px;
+	border-radius: 15px;
+}
+
+/***************************************************/
+
+
+/* Lista de ID's para la respuesta de la Api */
+
+#showUser{
+	margin-top: 115px;
+	word-wrap: break-word;
+	letter-spacing: 0px;
+	white-space: pre;
+}
+
+#showEmail{
+	letter-spacing: 0px;
+	font-size: 25px;
+	text-align: left;
+	word-wrap: break-word;
+	color: white;
+	white-space: pre;
+}
+
+#showCorrp{
+	letter-spacing: 0px;
+	text-align: left;
+	font-size: 25px;
+	word-wrap: break-word;
+	color: white;
+	white-space: pre;
+}
+
+#showWallet{
+	letter-spacing: 0px;
+	text-align: left;
+	font-size: 25px;
+	word-wrap: break-word;
+	color: white;
+	white-space: pre;
+}
+
+
+#showPhone{
+	letter-spacing: 0px;
+	text-align: left;
+	font-size: 25px;
+	word-wrap: break-word;
+	color: white;
+	white-space: pre;
+}
+
+#showPool{
+	letter-spacing: 0px;
+	text-align: left;
+	font-size: 25px;
+	word-wrap: break-word;
+	color: white;
+	white-space: pre;
+}
+
+#showId {
+	letter-spacing: 0px;
+	text-align: left;
+	font-size: 25px;
+	word-wrap: break-word;
+	color: white;
+	white-space: pre;
+}
+
+/***************************************************/
+
+
+/* Botón y animaciones */
+
+#button
+    {
+        font-family: 'Times New Roman', Times, serif;
+        color: rgba(255,255,255,.7);
+        font-size: 17px;
+        width: 90%;
+        height: 40px;
+        cursor: pointer;
+        background: linear-gradient(650deg, rgb(20, 255, 204), rgb(124, 13, 228));
+        margin-top: 35px;
+        border-radius: 15px;
+        animation-duration: 3s;
+        animation-name: apertura;
+    }
+
+#button:hover
+{
+    letter-spacing: 2px;
+    background: linear-gradient(650deg, rgb(124, 13, 228), rgb(20, 255, 204));
+}
+
+@keyframes apertura
+{
+    from{
+        width: 30%;
+    }
+    to{
+        width: 90%;
+    }
+}
+
+@keyframes wave 
+{
+    from{
+        color: rgb(124, 13, 228);
+    }
+    to{
+        color: rgb(20, 255, 204);
+    }
+}
+
+.ovni{
+    width: 30px;
+    height: 30px;
+    animation-name: ovni;
+    animation-direction: alternate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ovni
+{
+    from{
+        margin-right: 250px;
+    }
+    to{
+        margin-left: 250px;
+    }
+}
+
+/******************************************************************/
