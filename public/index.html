@@ -1,40 +1,129 @@
 <html>
-    <head>
-        <title>MSO | 42</title>
-        <meta charset="UTF-8">
-        <link rel="icon" type="image/png" href="src/astronauta.svg" />
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    </head>
-    <body style="background-color:rgb(45, 46, 45);">
-        
-        <div class="form-container" data-tilt>
-            <form id="form" onsubmit="ft_get_campus(e)">
-                <h3>MSO 42<h3>
-                    <img class="ovni" src="src/astronauta.svg">
-                    <class class="container">
-                    <span class="icon">
-                    <div class="container">
-						<input id="username" type="text" name="user" placeholder="Username" autocomplete="off"/>
-                    </div>
-                    <div class="container">
-                </div>
-				<button type="submit" id="button">Submit</button>
-			</form>
+<head>
+	<title>MSO | 42</title>
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="src/astronauta.svg" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
 
-			<div id="showUser"></div><br>
-			<div id="showEmail"></div>
-			<div id="showPhone"></div>
-			<div id="showCorrp"></div>
-			<div id="showWallet"></div>
-			<div id="showPool"></div>
-			<div id="showId"></div>
+<body style="background-color:black">
 
-        </div>
-        <div>
-        </div>
+	<!---------Fighter 1 form------------------------------------------>
 
-        <script src="script.js" language="javascript" type="text/javascript"></script>
+	<div class="fighter_one" style="width:40%; float:left" data-tilt>
+		<form id="form" onsubmit="ft_get_campus(e)">
+			<h3 style="letter-spacing: 1px;">Fighter 1<h3>
+			<img id="pick_one_img" class="figh_img_one" src="src/astronauta.svg">
 
-    </body>
+			<class class="container">
+			<span class="icon">
+
+			<div class="container">
+				<input id="username" type="text" name="user" placeholder="Username" autocomplete="off" />
+
+				<select id="pick_one" class="pick_one" name="pick_one">
+					<option selected value="0">Choose your fighter</option>
+					<optgroup label = "42 Members">
+						<option value="src/marvin">Marvin</option>
+						<option value="src/hulk">Hulk</option>
+						<option value="src/pickle">Pickle</option>
+					</optgroup>
+
+					<optgroup label = "Superheros">
+						<option value="src/spiderman">Spider-man</option>
+						<option value="src/batman">Batman</option>
+						<option value="src/ironman">Iron-Man</option>
+						<option value="src/deadpool">DeadPool</option>
+						<option value="src/superman">Super-Man</option>
+						<option value="src/wolverine">Wolverine</option>
+					</optgroup>
+
+					<optgroup label = "Humans or maybe not">
+						<option value="src/trump">Donald Trump</option>
+						<option value="src/thebicho">The Bicho</option>
+					</optgroup>
+					
+						<optgroup label = "Cartoons">
+							<option value="src/bugsbunny">Bugs Bunny</option>
+						</optgroup>
+				</select>
+			</div>
+
+			<div class="container"></div>
+		</form>
+		<div id="showUser"></div><br>
+		<div id="showEmail"></div>
+		<div id="showPhone"></div>
+		<div id="showCorrp"></div>
+		<div id="showWallet"></div>
+		<div id="showPool"></div>
+		<div id="showId"></div>
+	</div>
+
+	<!------------------------------------------------------------------->
+	<div style="width:20%; margin:0px auto"></div>
+		<img class="vs_img" src="src/vs_fight.png">
+	</div>
+	<!------------------------------------------------------------------->
+
+	<div class="fighter_two" style="width:40%; float:right" data-tilt>
+		<form id="form_two" onsubmit="ft_get_campus(e)">
+			<h3 style="letter-spacing: 1px;">Fighter 2<h3>
+			<img id="pick_two_img" class="figh_img_two" src="src/alien.svg">
+
+			<class class="container">
+			<span class="icon">
+
+			<div class="container">
+				<input id="username" type="text" name="user" placeholder="Username" autocomplete="off" />
+
+				
+				<select id="pick_two" class="pick_two" name="pick_two">
+						<option selected value="0">Choose your fighter</option>
+						<optgroup label = "42 Members">
+							<option value="src/marvin">Marvin</option>
+							<option value="src/hulk">Hulk</option>
+							<option value="src/pickle">Pickle</option>
+						</optgroup>
+						
+						<optgroup label = "Superheros">
+							<option value="src/spiderman">Spider-man</option>
+							<option value="src/batman">Batman</option>
+							<option value="src/ironman">Iron-Man</option>
+							<option value="src/deadpool">DeadPool</option>
+							<option value="src/superman">Super-Man</option>
+							<option value="src/wolverine">Wolverine</option>
+						</optgroup>
+
+						<optgroup label = "Humans or maybe not">
+							<option value="src/trump">Donald Trump</option>
+							<option value="src/thebicho">The Bicho</option>
+						</optgroup>
+						
+							<optgroup label = "Cartoons">
+								<option value="src/bugsbunny">Bugs Bunny</option>
+							</optgroup>
+		
+					</select>
+			</div>
+
+			<div class="container"></div>
+		</form>
+		<div id="showUser"></div><br>
+		<div id="showEmail"></div>
+		<div id="showPhone"></div>
+		<div id="showCorrp"></div>
+		<div id="showWallet"></div>
+		<div id="showPool"></div>
+		<div id="showId"></div>
+	</div>
+
+
+	<button type="submit" id="button">Figtht</button>
+	<!------------------------------------------------------------------->
+	<script src="script.js" language="javascript" type="text/javascript"></script>
+	
+</body>
 </html>

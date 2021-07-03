@@ -31,16 +31,13 @@ function ft_token_info(api_token)
 
 // Swap Image \\
 
-let userAction = document.getElementById("username");
-let myImage = document.querySelector('img');
+pick_two.addEventListener("change",() =>{
+	pick_two_img.setAttribute('src', pick_two.selectedOptions[0].value + '.ico')
+})
 
-userAction.onmouseover = () => ft_image_swap('src/astronauta.svg');
-userAction.onmouseleave = () => ft_image_swap('src/ordenador.svg');
-
-function ft_image_swap(path)
-{
-	myImage.setAttribute('src', path);
-}
+pick_one.addEventListener("change",() =>{
+	pick_one_img.setAttribute('src', pick_one.selectedOptions[0].value + '.ico')
+})
 
 /**********************************************************************/
 
