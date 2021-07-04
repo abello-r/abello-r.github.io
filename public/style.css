@@ -7,20 +7,40 @@ html{
 .header{
 	text-align: center;
 	color: ee5b30;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: header_wave;
+	animation-duration: 3s;
 }
 
 .header_42{
 	margin-right: 60px;
 	font-size: 5em;
 	margin-bottom: -100px;
-	font-family: 'Roboto', sans-serif;
+	color: ee5b30;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: header_wave;
+	animation-duration: 3s;
 }
 
 .header_mso{
 	margin-top: 85px;
-	font-family: 'Roboto', sans-serif;
 	margin-left: 8px;
 	margin-bottom: -50px;
+	color: ee5b30;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: header_wave;
+	animation-duration: 3s;
+}
+
+.victory_div{
+	font-size: 30px;
+	color: EE5B30;
+	text-align: center;
+	text-transform: capitalize;
+	font-family: 'Roboto', sans-serif;
 }
 
 .fighter_one
@@ -282,6 +302,17 @@ html{
 		color: rgb(85, 85, 85);
 	}
 }
+
+@keyframes header_wave
+{
+	from{
+		color:EE5B30;
+	}
+	to{
+		color: rgb(255, 153, 0);
+	}
+}
+
 
 @keyframes figh_img_one
 {
