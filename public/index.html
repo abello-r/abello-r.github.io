@@ -5,11 +5,17 @@
 	<link rel="icon" type="image/png" href="src/astronauta.svg" />
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-color:black"; >
-
+<body style="background-color:rgb(255, 255, 255); overflow-y:hidden"></body>
+	<div class="header">
+		<h1 class="header_42">42</h1>
+		<h1 class="header_mso">Ring</h1>
+	</div>
 	<!---------Fighter 1 form------------------------------------------>
 
 	<div class="fighter_one" style="width:40%; float:left" data-tilt>
@@ -21,32 +27,32 @@
 			<span class="icon">
 
 			<div class="container">
-				<input id="username" type="text" name="user" placeholder="Username" autocomplete="off" />
+				<input id="username" class="place_1" type="text" name="user" placeholder="Username" autocomplete="off" />
 
 				<select id="pick_one" class="pick_one" name="pick_one">
 					<option selected value="0">Choose your fighter</option>
 					<optgroup label = "42 Members">
-						<option value="src/marvin">Marvin</option>
-						<option value="src/hulk">Hulk</option>
-						<option value="src/pickle">Pickle</option>
+						<option value="Marvin">Marvin</option>
+						<option value="Hulk">Hulk</option>
+						<option value="Pickle">Pickle</option>
 					</optgroup>
 
 					<optgroup label = "Superheros">
-						<option value="src/spiderman">Spider-man</option>
-						<option value="src/batman">Batman</option>
-						<option value="src/ironman">Iron-Man</option>
-						<option value="src/deadpool">DeadPool</option>
-						<option value="src/superman">Super-Man</option>
-						<option value="src/wolverine">Wolverine</option>
+						<option value="Spider-Man">Spider-man</option>
+						<option value="Batman">Batman</option>
+						<option value="Iron-Man">Iron-Man</option>
+						<option value="Deadpool">DeadPool</option>
+						<option value="Superman">Super-Man</option>
+						<option value="Wolverine">Wolverine</option>
 					</optgroup>
 
 					<optgroup label = "Humans or maybe not">
-						<option value="src/trump">Donald Trump</option>
-						<option value="src/thebicho">The Bicho</option>
+						<option value="Trump">Donald Trump</option>
+						<option value="The-Bicho">The Bicho</option>
 					</optgroup>
-					
+
 						<optgroup label = "Cartoons">
-							<option value="src/bugsbunny">Bugs Bunny</option>
+							<option value="BugsBunny">Bugs Bunny</option>
 						</optgroup>
 				</select>
 			</div>
@@ -54,18 +60,13 @@
 			<div class="container"></div>
 		</form>
 		<div id="showUser"></div><br>
-		<div id="showEmail"></div>
-		<div id="showPhone"></div>
-		<div id="showCorrp"></div>
-		<div id="showWallet"></div>
-		<div id="showPool"></div>
-		<div id="showId"></div>
+		<div id="showPower"></div>
+		<div id="showPick"></div>
 	</div>
 
 	<!------------------------------------------------------------------->
 	<div style="width:20%; margin:0px auto"></div>
 		<img class="vs_img" src="src/vs_fight.png">
-	</div>
 	<!------------------------------------------------------------------->
 
 	<div class="fighter_two" style="width:40%; float:right" data-tilt>
@@ -77,33 +78,33 @@
 			<span class="icon">
 
 			<div class="container">
-				<input id="username" type="text" name="user" placeholder="Username" autocomplete="off" />
+				<input id="username_two" type="text" name="user" placeholder="Username" autocomplete="off" />
 
 				
 				<select id="pick_two" class="pick_two" name="pick_two">
 						<option selected value="0">Choose your fighter</option>
 						<optgroup label = "42 Members">
-							<option value="src/marvin">Marvin</option>
-							<option value="src/hulk">Hulk</option>
-							<option value="src/pickle">Pickle</option>
+							<option value="Marvin">Marvin</option>
+							<option value="Hulk">Hulk</option>
+							<option value="Pickle">Pickle</option>
 						</optgroup>
-						
+
 						<optgroup label = "Superheros">
-							<option value="src/spiderman">Spider-man</option>
-							<option value="src/batman">Batman</option>
-							<option value="src/ironman">Iron-Man</option>
-							<option value="src/deadpool">DeadPool</option>
-							<option value="src/superman">Super-Man</option>
-							<option value="src/wolverine">Wolverine</option>
+							<option value="Spider-Man">Spider-man</option>
+							<option value="Batman">Batman</option>
+							<option value="Iron-Man">Iron-Man</option>
+							<option value="Deadpool">DeadPool</option>
+							<option value="Superman">Super-Man</option>
+							<option value="Wolverine">Wolverine</option>
 						</optgroup>
 
 						<optgroup label = "Humans or maybe not">
-							<option value="src/trump">Donald Trump</option>
-							<option value="src/thebicho">The Bicho</option>
+							<option value="Trump">Donald Trump</option>
+							<option value="The-Bicho">The Bicho</option>
 						</optgroup>
-						
+
 							<optgroup label = "Cartoons">
-								<option value="src/bugsbunny">Bugs Bunny</option>
+								<option value="BugsBunny">Bugs Bunny</option>
 							</optgroup>
 		
 					</select>
@@ -111,17 +112,13 @@
 
 			<div class="container"></div>
 		</form>
-		<div id="showUser"></div><br>
-		<div id="showEmail"></div>
-		<div id="showPhone"></div>
-		<div id="showCorrp"></div>
-		<div id="showWallet"></div>
-		<div id="showPool"></div>
-		<div id="showId"></div>
+		<div id="showUser_two"></div><br>
+		<div id="showPower_two"></div>
+		<div id="showPick_two"></div>
 	</div>
 
 
-	<button type="submit" id="button">Figtht</button>
+	<button type="submit" id="button">Fight</button>
 	<!------------------------------------------------------------------->
 	<script src="script.js" language="javascript" type="text/javascript"></script>
 	
