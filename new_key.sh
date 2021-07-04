@@ -13,7 +13,7 @@ if [ -f .env ]
 	then
 		clear
 	else
-		echo -e "\nIf you don't have your keys yet, you can get them at https://profile.intra.42.fr/oauth/applications/5888\n"
+		echo -e "\nIf you don't have your keys yet, you can get them at https://profile.intra.42.fr/oauth/applications\n"
 		echo "${BLUE}Enter your new UID key ...${RESET}"
 		read FILL_UID
 		echo "${GREEN}Received [${FILL_UID}] [OK]${RESET}"

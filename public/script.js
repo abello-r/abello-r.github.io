@@ -44,30 +44,34 @@ pick_one.addEventListener("change",() =>{
 // Form and actions \\
 
 let user = undefined;
-let form = document.getElementById("form");
 let user_two = undefined;
+let form = document.getElementById("form");
 let form_two = document.getElementById("form_two");
 let button_fight = document.getElementById("button");
 
-let power;
-let power_two;
+player_one = 0;
+player_two = 0;
+power = 0;		//	Power player one
+power_two = 0;	//	Power player two
+streak_one = 0;	// Streaks wins player one
+streak_two = 0;	// Streaks wins player two
 
-form.onsubmit = (e) => ft_get_data_user(e);
-form_two.onsubmit = (e) => ft_get_data_user_two(e);
-button_fight.onclick = (e) => ft_fight(e);
+form.onsubmit = (e) => ft_get_data_user(e);				//	When form_1 is sended.
+form_two.onsubmit = (e) => ft_get_data_user_two(e);		//	When form_2 is sended.
+button_fight.onclick = (e) => ft_fight(e);				//	When press "FIGHT" buttom.
 
-function ft_fight(e){
+async function ft_fight(e){
 	ft_get_data_user(e);
 	ft_get_data_user_two(e);
-	ft_victory(e);
+	setTimeout(() => ft_victory(e), 1000);
 }
 
 function ft_get_data_user(e)
 {
 	user = document.getElementById("username").value;
-	localStorage.setItem('player', user);
+
 	if (e !== undefined)
-		e.preventDefault();
+	e.preventDefault();
 	fetch(`https://api.intra.42.fr/v2/users/${user}`,{
 		headers:
 			{
@@ -77,9 +81,9 @@ function ft_get_data_user(e)
 		.then(response=>response.json())
 		.then(datos=>
 		{
-			console.log(datos)
+			console.log(datos);
+			player_one = datos.first_name;
 			power = datos.correction_point + datos.wallet;
-			localStorage.setItem('power', power);
 			document.getElementById("showUser").innerHTML = 'Skills'
 			document.getElementById("showPower").innerHTML = 'Power : ' + power;
 			document.getElementById("showPick").innerHTML = 'Character : ' + pick_one.selectedOptions[0].value
@@ -89,7 +93,6 @@ function ft_get_data_user(e)
 function ft_get_data_user_two(e)
 {
 	user = document.getElementById("username_two").value;
-	localStorage.setItem('player_two', user);
 
 	if (e !== undefined)
 		e.preventDefault();
@@ -102,9 +105,9 @@ function ft_get_data_user_two(e)
 		.then(response=>response.json())
 		.then(datos=>
 		{
-			console.log(datos)
+			console.log(datos);
+			player_two = datos.first_name;
 			power_two = datos.correction_point + datos.wallet;
-			localStorage.setItem('power_two', power_two);
 			document.getElementById("showUser_two").innerHTML = 'Skills';
 			document.getElementById("showPower_two").innerHTML = 'Power : ' + power_two;
 			document.getElementById("showPick_two").innerHTML = 'Character : ' + pick_two.selectedOptions[0].value
@@ -113,20 +116,19 @@ function ft_get_data_user_two(e)
 
 function ft_victory(e)
 {
-	var power = localStorage.getItem('power');
-	var power_two = localStorage.getItem('power_two');
-	var player_one = localStorage.getItem('player');
-	var player_two = localStorage.getItem('player_two');
-
 	if (power > 0 && power_two > 0)
 	{
-		if (power > power_two)
+		if (power > power_two) // If player ONE wins.
 		{
-			document.getElementById("victory").innerHTML = '¡' + player_one + ' wins!';
+			streak_one += 1;
+			streak_two = 0;
+			document.getElementById("victory").innerHTML = '¡' + player_one + ' wins!' + '<br>' + 'Streak\'s = ' + streak_one;
 		}
-		else if (power_two > power)
+		else if (power_two > power) // If player TWO wins.
 		{
-			document.getElementById("victory").innerHTML = '¡' + player_two + ' wins!';
+			streak_one = 0;
+			streak_two += 1;
+			document.getElementById("victory").innerHTML = '¡' + player_two + ' wins!' + '<br>' + 'Streak\'s = ' + streak_two;
 		}
 	}
 }
