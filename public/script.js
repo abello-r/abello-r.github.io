@@ -79,14 +79,14 @@ function ft_get_data_user(e)
 			}
 		})
 		.then(response=>response.json())
-		.then(datos=>
+		.then(async (datos)=>
 		{
 			console.log(datos);
-			player_one = datos.first_name;
-			power = datos.correction_point + datos.wallet;
+			player_one = await datos.first_name;
+			power = await datos.correction_point + datos.wallet + datos.achievements.length + datos.projects_users.length;
 			document.getElementById("showUser").innerHTML = 'Skills'
 			document.getElementById("showPower").innerHTML = 'Power : ' + power;
-			document.getElementById("showPick").innerHTML = 'Character : ' + pick_one.selectedOptions[0].value
+			document.getElementById("showPick").innerHTML = 'Character : ' + pick_one.selectedOptions[0].value;
 		})
 }
 
@@ -103,14 +103,14 @@ function ft_get_data_user_two(e)
 			}
 		})
 		.then(response=>response.json())
-		.then(datos=>
+		.then(async (datos)=>
 		{
 			console.log(datos);
-			player_two = datos.first_name;
-			power_two = datos.correction_point + datos.wallet;
+			player_two = await datos.first_name;
+			power_two = await datos.correction_point + datos.wallet + datos.achievements.length + datos.projects_users.length;
 			document.getElementById("showUser_two").innerHTML = 'Skills';
 			document.getElementById("showPower_two").innerHTML = 'Power : ' + power_two;
-			document.getElementById("showPick_two").innerHTML = 'Character : ' + pick_two.selectedOptions[0].value
+			document.getElementById("showPick_two").innerHTML = 'Character : ' + pick_two.selectedOptions[0].value;
 		})
 }
 
@@ -123,6 +123,8 @@ function ft_victory(e)
 			streak_one += 1;
 			streak_two = 0;
 
+			document.getElementById("crown_two").setAttribute('title', "") // Reset p2
+			document.getElementById("crown_one").setAttribute('title', "The crown for the king") // Title on img
 			document.getElementById("crown_one").setAttribute('src', "src/" + 'crown.ico'); // Set crown for the king
 			document.getElementById("crown_two").setAttribute('src', ""); // Remove crown player two
 
@@ -133,6 +135,8 @@ function ft_victory(e)
 			streak_one = 0;
 			streak_two += 1;
 
+			document.getElementById("crown_one").setAttribute('title', "") // Reset p1
+			document.getElementById("crown_two").setAttribute('title', "The crown for the king") // Title on img
 			document.getElementById("crown_two").setAttribute('src', "src/" + 'crown.ico') // Set crown for the king
 			document.getElementById("crown_one").setAttribute('src', ""); // Remove crown player one
 
