@@ -11,14 +11,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-color:rgb(255, 255, 255); overflow-y:hidden"></body>
-	<div class="header">
-		<h1 class="header_42">42</h1>
-		<h1 class="header_mso">Ring</h1>
-	</div>
+<body style="background-color: whitesmoke; overflow-y:hidden;"></body>
+
+	<div class="flex_rp" style="height: 100%;">
+
 	<!---------Fighter 1 form------------------------------------------>
 
-	<div class="fighter_one" style="width:40%; float:left" data-tilt>
+	<div class="fighter_one" data-tilt>
 		<form id="form" onsubmit="ft_get_campus(e)">
 
 			<div>
@@ -69,12 +68,19 @@
 		<div id="showPick"></div>
 	</div>
 
-	<!------------------------------------------------------------------->
-	<div style="width:20%; margin:0px auto"></div>
+	<!-------------------------------Middle column------------------------------------>
+
+	<div class="middle_fight">
+
+		
 		<img class="vs_img" src="src/vs_fight.png">
+		<button type="submit" id="button">Fight</button>
+		<div id="victory" class="victory_div"></div>
+	</div>
+
 	<!------------------------------------------------------------------->
 
-	<div class="fighter_two" style="width:40%; float:right" data-tilt>
+	<div class="fighter_two" data-tilt>
 		<form id="form_two" onsubmit="ft_get_campus(e)">
 
 			<div>
@@ -127,8 +133,12 @@
 		<div id="showPick_two"></div>
 	</div>
 
-	<button type="submit" id="button">Fight</button>
-	<div id="victory" class="victory_div"></div>
+	</div> <!---div flexx-->
+
+	<div class="header">
+			<img class="img_42" src="src/42logo.png">
+			<h1 class="header_ring">Ring</h1>
+	</div>
 	<!------------------------------------------------------------------->
 	<script src="script.js" language="javascript" type="text/javascript"></script>
 	

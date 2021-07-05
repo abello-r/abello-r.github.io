@@ -122,17 +122,27 @@ function ft_victory(e)
 		{
 			streak_one += 1;
 			streak_two = 0;
-			document.getElementById("crown_one").setAttribute('src', "src/" + 'crown.ico');
-			document.getElementById("crown_two").setAttribute('src', "");
-			document.getElementById("victory").innerHTML = '¡' + player_one + ' wins!' + '<br>' + 'Streak\'s = ' + streak_one;
+
+			document.getElementById("crown_one").setAttribute('src', "src/" + 'crown.ico'); // Set crown for the king
+			document.getElementById("crown_two").setAttribute('src', ""); // Remove crown player two
+
+			document.getElementById("victory").innerHTML = '¡' + player_one + ' wins!' + '<br>' + 'Streak\'s = ' + streak_one; // Set straks p1
 		}
 		else if (power_two > power) // If player TWO wins.
 		{
 			streak_one = 0;
 			streak_two += 1;
-			document.getElementById("crown_two").setAttribute('src', "src/" + 'crown.ico')
-			document.getElementById("crown_one").setAttribute('src', "");
-			document.getElementById("victory").innerHTML = '¡' + player_two + ' wins!' + '<br>' + 'Streak\'s = ' + streak_two;
+
+			document.getElementById("crown_two").setAttribute('src', "src/" + 'crown.ico') // Set crown for the king
+			document.getElementById("crown_one").setAttribute('src', ""); // Remove crown player one
+
+			document.getElementById("victory").innerHTML = '¡' + player_two + ' wins!' + '<br>' + 'Streak\'s = ' + streak_two; // Set streaks p2
+		}
+		else if (power_two == power)
+		{
+			document.getElementById("crown_two").setAttribute('src', 'src/draw.ico'); // Draw ico
+			document.getElementById("crown_one").setAttribute('src', 'src/draw.ico'); // Draw ico
+			document.getElementById("victory").innerHTML = '¡It\'s a draw!' + '<br>' + 'No one wins.';
 		}
 	}
 }
