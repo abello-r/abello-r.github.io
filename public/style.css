@@ -39,6 +39,7 @@ html{
 .victory_div{
 	font-size: 30px;
 	color: EE5B30;
+	margin-top: 45px;
 	text-align: center;
 	text-transform: capitalize;
 	font-family: 'Kanit', sans-serif;
@@ -265,7 +266,7 @@ html{
 .figh_img_one{
 	width: 48px;
 	height: 48px;
-	animation-name: figh_img_one;
+	animation-name: fight_img_one;
 	animation-direction: alternate;
 	animation-duration: 3s;
 	animation-iteration-count: infinite;
@@ -274,10 +275,14 @@ html{
 .figh_img_two{
 	width: 48px;
 	height: 48px;
-	animation-name: figh_img_two;
+	animation-name: fight_img_two;
 	animation-direction: alternate;
 	animation-duration: 3s;
 	animation-iteration-count: infinite;
+}
+
+.crown{
+	margin-top: -60px;
 }
 
 .vs_img{
@@ -317,7 +322,7 @@ html{
 }
 
 
-@keyframes figh_img_one
+@keyframes fight_img_one
 {
 	from{
 		margin-left: 490px;
@@ -327,7 +332,7 @@ html{
 	}
 }
 
-@keyframes figh_img_two
+@keyframes fight_img_two
 {
 	from{
 		margin-left: -680px;

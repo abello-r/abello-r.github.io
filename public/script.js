@@ -122,12 +122,16 @@ function ft_victory(e)
 		{
 			streak_one += 1;
 			streak_two = 0;
+			document.getElementById("crown_one").setAttribute('src', "src/" + 'crown.ico');
+			document.getElementById("crown_two").setAttribute('src', "");
 			document.getElementById("victory").innerHTML = '¡' + player_one + ' wins!' + '<br>' + 'Streak\'s = ' + streak_one;
 		}
 		else if (power_two > power) // If player TWO wins.
 		{
 			streak_one = 0;
 			streak_two += 1;
+			document.getElementById("crown_two").setAttribute('src', "src/" + 'crown.ico')
+			document.getElementById("crown_one").setAttribute('src', "");
 			document.getElementById("victory").innerHTML = '¡' + player_two + ' wins!' + '<br>' + 'Streak\'s = ' + streak_two;
 		}
 	}
