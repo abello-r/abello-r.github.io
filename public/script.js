@@ -69,7 +69,7 @@ async function ft_fight(e){
 
 function ft_xp() // Funcion de llamadas de prueba
 {
-	fetch(`https://api.intra.42.fr/v2/users/abello-r`,{
+	fetch(`https://api.intra.42.fr/v2/campus/22/users/?page=6/sort=pool_year=2019"`,{
 		headers:
 			{
 				Authorization: `Bearer ${api_token}`
@@ -136,6 +136,7 @@ function ft_victory(e)
 	{
 		if (power > power_two) // If player ONE wins.
 		{
+			ft_win_phrases(); // Win text top
 			streak_one += 1;
 			streak_two = 0;
 
@@ -148,9 +149,10 @@ function ft_victory(e)
 		}
 		else if (power_two > power) // If player TWO wins.
 		{
+			ft_win_phrases(); // Win text top
 			streak_one = 0;
 			streak_two += 1;
-
+			
 			
 			document.getElementById("crown_one").setAttribute('title', "") // Reset p1
 			document.getElementById("crown_two").setAttribute('title', "The crown for the king") // Title on img
@@ -158,6 +160,7 @@ function ft_victory(e)
 			document.getElementById("crown_one").setAttribute('src', ""); // Remove crown player one
 			
 			document.getElementById("victory").innerHTML = '¡' + player_two + ' wins!' + '<br>' + 'Streak\'s = ' + streak_two; // Set streaks p2
+
 		}
 		else if (power_two == power)
 		{
@@ -165,6 +168,48 @@ function ft_victory(e)
 			document.getElementById("crown_one").setAttribute('src', 'src/draw.ico'); // Draw ico
 			document.getElementById("victory").innerHTML = '¡It\'s a draw!' + '<br>' + 'No one wins.';
 		}
+	}
+}
+
+function ft_win_phrases()
+{
+	var ran = Math.floor(Math.random(1,4) * (4 - 1)) + 1; // New random number 1 , 3
+
+	if (pick_one.selectedOptions[0].value == "Marvin") // Marvin phrases
+	{
+		if (ran == 1)
+			document.getElementById("msg_winner").innerHTML = "Hey, wanna kill all humans?";
+		else if (ran == 2)
+			document.getElementById("msg_winner").innerHTML = "Humans are so miserable";
+		else if (ran == 3)
+			document.getElementById("msg_winner").innerHTML = "The blackhole will absorb you.";
+	}
+	else if (pick_one.selectedOptions[0].value == "Hulk") // Hulk phrases
+	{
+		if (ran == 1)
+			document.getElementById("msg_winner").innerHTML = "Don't make me angry! ...";
+		else if (ran == 2)
+			document.getElementById("msg_winner").innerHTML = "I eat dumbells for breakfast.";
+		else if (ran == 3)
+			document.getElementById("msg_winner").innerHTML = "Any last words?";
+	}
+	else if (pick_one.selectedOptions[0].value == "Pickle") // Pickle phrases
+	{
+		if (ran == 1)
+			document.getElementById("msg_winner").innerHTML = " I'm Pickle Riiick!";
+		else if (ran == 2)
+			document.getElementById("msg_winner").innerHTML = "Come on, flip the pickle.";
+		else if (ran == 3)
+			document.getElementById("msg_winner").innerHTML = "I’m a scientist. Because, I invent, transform, create and destroy for a living.";
+	}
+	else if (pick_one.selectedOptions[0].value == "Spider-man") // Spider man phrases
+	{
+		if (ran == 1)
+			document.getElementById("msg_winner").innerHTML = "";
+		else if (ran == 2)
+			document.getElementById("msg_winner").innerHTML = "";
+		else if (ran == 3)
+			document.getElementById("msg_winner").innerHTML = "";
 	}
 }
 
