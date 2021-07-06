@@ -1,6 +1,7 @@
 // Window Onload \\
 
-window.onload = ft_get_token;
+window.onload = ft_get_token; 
+
 
 let api_token = undefined;
 
@@ -24,7 +25,7 @@ function ft_token_info(api_token)
 		}
 	})
 	.then(response=>response.json())
-	.then(datos=>(console.log(datos)))
+	//ft_xp();
 }
 
 /**********************************************************************/
@@ -64,6 +65,21 @@ async function ft_fight(e){
 	ft_get_data_user(e);
 	ft_get_data_user_two(e);
 	setTimeout(() => ft_victory(e), 1000);
+}
+
+function ft_xp() // Funcion de llamadas de prueba
+{
+	fetch(`https://api.intra.42.fr/v2/users/abello-r`,{
+		headers:
+			{
+				Authorization: `Bearer ${api_token}`
+			}
+	})
+	.then(response=>response.json())
+	.then(async (datos)=>
+	{
+		console.log(await datos);
+	})
 }
 
 function ft_get_data_user(e)
@@ -135,11 +151,12 @@ function ft_victory(e)
 			streak_one = 0;
 			streak_two += 1;
 
+			
 			document.getElementById("crown_one").setAttribute('title', "") // Reset p1
 			document.getElementById("crown_two").setAttribute('title', "The crown for the king") // Title on img
 			document.getElementById("crown_two").setAttribute('src', "src/" + 'crown.ico') // Set crown for the king
 			document.getElementById("crown_one").setAttribute('src', ""); // Remove crown player one
-
+			
 			document.getElementById("victory").innerHTML = '¡' + player_two + ' wins!' + '<br>' + 'Streak\'s = ' + streak_two; // Set streaks p2
 		}
 		else if (power_two == power)
