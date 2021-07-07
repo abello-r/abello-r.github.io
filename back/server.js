@@ -13,14 +13,14 @@ app.get('/', (req, res) =>
 
 app.get('/private', (req, res) =>
 {
-	const data = 'grant_type=client_credentials&client_id=' + process.env.UID + '&client_secret=' + process.env.SECRET
+	const data = 'grant_type=client_credentials&client_id=' + '6485b53f2069b2e310b735eb2019dc626d08cac9ac7071cf453b6cc7e710b41c' + '&client_secret=' + '1ea4a33997183a9f8bb82c31aec10d33db0f5cc9926662aa1378ff737caa93c9'
 	const options =
 	{
 		method: 'POST',
 		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		payload:data
 	}
-	const response = fetch(process.env.URL, options, (error, meta, body) =>
+	const response = fetch('https://api.intra.42.fr/oauth/token', options, (error, meta, body) =>
 	{
 		const rqe = JSON.parse(body.toString())
 		const {access_token:token} = rqe;
