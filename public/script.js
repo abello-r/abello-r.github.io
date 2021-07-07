@@ -33,11 +33,11 @@ function ft_token_info(api_token)
 // Swap Image \\
 
 pick_two.addEventListener("change",() =>{
-	pick_two_img.setAttribute('src', "src/" + pick_two.selectedOptions[0].value + '.ico')
+	pick_two_img.setAttribute('src', "public/src/" + pick_two.selectedOptions[0].value + '.ico')
 })
 
 pick_one.addEventListener("change",() =>{
-	pick_one_img.setAttribute('src', "src/" + pick_one.selectedOptions[0].value + '.ico')
+	pick_one_img.setAttribute('src', "public/src/" + pick_one.selectedOptions[0].value + '.ico')
 })
 
 /**********************************************************************/
@@ -144,7 +144,7 @@ function ft_victory(e)
 
 			document.getElementById("crown_two").setAttribute('title', "") // Reset p2
 			document.getElementById("crown_one").setAttribute('title', "The crown for the king") // Title on img
-			document.getElementById("crown_one").setAttribute('src', "src/" + 'crown.ico'); // Set crown for the king
+			document.getElementById("crown_one").setAttribute('src', "public/src/" + 'crown.ico'); // Set crown for the king
 			document.getElementById("crown_two").setAttribute('src', ""); // Remove crown player two
 
 			document.getElementById("victory").innerHTML = '¡' + player_one + ' wins!' + '<br>' + 'Streak\'s = ' + streak_one; // Set straks p1
@@ -159,15 +159,15 @@ function ft_victory(e)
 			
 			document.getElementById("crown_one").setAttribute('title', "") // Reset p1
 			document.getElementById("crown_two").setAttribute('title', "The crown for the king") // Title on img
-			document.getElementById("crown_two").setAttribute('src', "src/" + 'crown.ico') // Set crown for the king
+			document.getElementById("crown_two").setAttribute('src', "public/src/" + 'crown.ico') // Set crown for the king
 			document.getElementById("crown_one").setAttribute('src', ""); // Remove crown player one
 			
 			document.getElementById("victory").innerHTML = '¡' + player_two + ' wins!' + '<br>' + 'Streak\'s = ' + streak_two; // Set streaks p2
 		}
 		else if (power_two == power)
 		{
-			document.getElementById("crown_two").setAttribute('src', 'src/draw.ico'); // Draw ico
-			document.getElementById("crown_one").setAttribute('src', 'src/draw.ico'); // Draw ico
+			document.getElementById("crown_two").setAttribute('src', 'public/src/draw.ico'); // Draw ico
+			document.getElementById("crown_one").setAttribute('src', 'public/src/draw.ico'); // Draw ico
 			document.getElementById("victory").innerHTML = '¡It\'s a draw!' + '<br>' + 'No one wins.';
 			document.getElementById("msg_winner").innerHTML = "";
 		}
