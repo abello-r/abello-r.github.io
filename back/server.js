@@ -32,7 +32,7 @@ app.listen(config.PORT, () =>
 {
 	console.log(`\
 
-Started [PORT 3000] http://${config.HOST}:${config.PORT}`);
+Started [PORT 80] http://${config.HOST}:${config.PORT}`);
 
 	console.log(`\ 
 If you have this problem [localhost refused to connect], Check that in the backend directory, the .env file has the correct data.`);
