@@ -6,7 +6,7 @@ BLUE=`tput setaf 4`
 FILL_UID=
 FILL_SECRET=
 
-cd ~/42_ring/abello-r.github.io/back
+cd ~/abello-r.github.io/back
 
 if [ -f .env ]
 	then
