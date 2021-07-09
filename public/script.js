@@ -315,6 +315,16 @@ function ft_win_phrases()
 		else if (ran == 3)
 			document.getElementById("msg_winner").innerHTML = "Will you read us a bedtime story?";
 	}
+	else if (pick.selectedOptions[0].value == "Son-Goku") // Son Goku phrases
+	{
+		document.getElementById("msg_winner").style.color = '#072083';
+		if (ran == 1)
+			document.getElementById("msg_winner").innerHTML = "Power comes in response to a need, not a desire.";
+		else if (ran == 2)
+			document.getElementById("msg_winner").innerHTML = "Show me what you can do.";
+		else if (ran == 3)
+			document.getElementById("msg_winner").innerHTML = "I’m so hungry, I can’t even move.";
+	}
 }
 
 /**********************************************************************/
