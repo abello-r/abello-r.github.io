@@ -6,7 +6,7 @@ BLUE=`tput setaf 4`
 FILL_UID=
 FILL_SECRET=
 
-cd back
+cd 42_ring/abello-r.github.io/back
 rm -rf .env
 
 if [ -f .env ]
@@ -30,4 +30,5 @@ if [ -f .env ]
 fi
 
 cd ..
-bash run.sh
+bash .run.sh
+

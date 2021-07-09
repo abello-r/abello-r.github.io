@@ -6,7 +6,7 @@ BLUE=`tput setaf 4`
 FILL_UID=
 FILL_SECRET=
 
-cd back
+cd ~/42_ring/abello-r.github.io/back
 
 if [ -f .env ]
 	then
@@ -33,7 +33,7 @@ if [ -d node_modules ];
     then
 		echo "${GREEN}Environment variable set [OK] ...${RESET}"
         echo "${GREEN}Node_modules [OK] ...${RESET}" 
-        node server.js
+        node server.js &
     else
         clear
         echo "${BLUE}Installing packages and updating ..."
@@ -41,5 +41,5 @@ if [ -d node_modules ];
         chmod 777 *
         clear
         echo "${GREEN}Loading ...${RESET}"
-        node server.js
+        node server.js &
 fi
