@@ -7,11 +7,12 @@ let api_token = undefined;
 
 function ft_get_token()
 {
-	fetch("http://localhost:80/private")
+	fetch("https://42ring.es/private")
 	.then(response=>response.json())
 	.then(datos=>
 	{
 		api_token = datos.token;
+		console.log(api_token);
 		ft_token_info(datos.token)
 	});
 }
