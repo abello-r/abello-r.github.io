@@ -425,10 +425,20 @@ html{
 
 
 #login{
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 25px;
+	border: none;
+	outline: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
+	background: whitesmoke;
+	cursor: pointer;
+}
+
+#login:hover{
+	color: red;
 }
 
 #authentication{
@@ -441,6 +451,10 @@ html{
 
 #bottom_auth{
 	height: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
 }
 
 #red_cir{
