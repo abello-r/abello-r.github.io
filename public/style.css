@@ -427,6 +427,7 @@ html{
 #login{
 	font-family: 'Chakra Petch', sans-serif;
 	font-size: 25px;
+	text-decoration: bold;
 	border: none;
 	outline: none;
 	display: flex;
