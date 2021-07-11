@@ -420,3 +420,52 @@ html{
 #msg_winner{
 	font-weight: 400;
 }
+
+/************AUTH CSS DATA DOWN********************/
+
+
+#login{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+#authentication{
+	height: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+#bottom_auth{
+	height: 10%;
+}
+
+#red_cir{
+	width: 500px;
+	height: 500px;
+	background: red;
+	-moz-border-radius: 250px;
+	-webkit-border-radius: 250px;
+	border-radius: 250px;
+	margin-top: -520px;
+	margin-left: 425px;
+}
+
+.forty_two_img_auth{
+	width: 100px;
+	margin-top: 60px;
+}
+
+.header_ring_auth{
+	margin-top: 100px;
+	animation-name: none;
+	color: black;
+}
+
+.samurai_img{
+	width: 450px;
+	margin-top: -15px;
+}
