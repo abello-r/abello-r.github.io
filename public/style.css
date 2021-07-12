@@ -452,6 +452,7 @@ html{
 
 #bottom_auth{
 	height: 10%;
+	margin-top: 85%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
