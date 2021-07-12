@@ -22,6 +22,9 @@ app.get('/private', (req, res) =>
 	}
 	const response = fetch(process.env.URL, options, (error, meta, body) =>
 	{
+		Access-Control-Allow-Headers : "Content-Type",
+		Access-Control-Allow-Origin: "*",
+		Access-Control-Allow-Methods: "OPTIONS,POST,GET"
 		const rqe = JSON.parse(body.toString())
 		const {access_token:token} = rqe;
 		return(res.json({token}))

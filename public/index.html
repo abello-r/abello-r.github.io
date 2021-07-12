@@ -14,22 +14,23 @@
 </head>
 
 <body style="background-color: whitesmoke; overflow-y:hidden;">
-
+	
 	<div id="authentication">
-
+		
 		<img class="samurai_img" src="src/samurai_izq.png">
-		<div class="header">
-			<img class="forty_two_img_auth" src="src/42logo.png">
-			<h1 class="header_ring_auth">Ring</h1>
+		<div id="red_cir">
+			<div class="header">
+				<img class="forty_two_img_auth" src="src/42logo.png">
+				<h1 class="header_ring_auth">Ring</h1>
+			</div>
 		</div>
 		<img class="samurai_img" src="src/samurai_der.png">
 
 	</div>
 
-	<div id="red_cir"></div>
 
 	<div id="bottom_auth">
-		<button onclick="location.href='https://api.intra.42.fr/oauth/authorize?client_id=6485b53f2069b2e310b735eb2019dc626d08cac9ac7071cf453b6cc7e710b41c&redirect_uri=https%3A%2F%2F42ring.es&response_type=code';" id="login">Login</button>
+		<button onclick="location.href='https://api.intra.42.fr/oauth/authorize?client_id=6485b53f2069b2e310b735eb2019dc626d08cac9ac7071cf453b6cc7e710b41c&redirect_uri=https%3A%2F%2F42ring.es%2Fring.html&response_type=code'" id="login">Login</button>
 	</div>
 
 </body>
