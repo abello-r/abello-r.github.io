@@ -1,9 +1,15 @@
 // Window Onload \\
 
-window.onload = ft_get_token; 
-
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
 let api_token = undefined;
+window.onload = api_token = ft_get_token();
+console.log(api_token);
 
 function ft_get_token()
 {
@@ -20,7 +26,8 @@ function ft_get_token()
 function ft_token_info(api_token)
 {
 	fetch("https://api.intra.42.fr/oauth/token/info",{
-	headers:
+		mode: "no-cors",
+		headers:
 		{
 			Authorization: `Bearer ${api_token}`
 		}
@@ -29,7 +36,7 @@ function ft_token_info(api_token)
 	//ft_xp();
 }
 
-/**********************************************************************/
+/********************************hola**************************************/
 
 // Swap Image \\
 
@@ -91,6 +98,7 @@ function ft_get_data_user(e)
 	if (e !== undefined)
 	e.preventDefault();
 	fetch(`https://api.intra.42.fr/v2/users/${user}`,{
+		mode: 'no-cors',
 		headers:
 			{
 				Authorization: `Bearer ${api_token}`
@@ -115,6 +123,7 @@ function ft_get_data_user_two(e)
 	if (e !== undefined)
 		e.preventDefault();
 	fetch(`https://api.intra.42.fr/v2/users/${user}`,{
+		mode: 'no-cors',
 		headers:
 			{
 				Authorization: `Bearer ${api_token}`
