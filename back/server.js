@@ -28,6 +28,9 @@ app.get('/private', (req, res) =>
 	})
 });
 
+console.log("aqui");
+console.log(token);
+
 app.listen(config.PORT, () =>
 {
 	console.log(`\
