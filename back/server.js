@@ -25,7 +25,7 @@ app.get('/private', (req, res) => {
 	})
 });
 
-import '../public/script.js';
+let api_token = 'c9bbf6b62579431a4fd2e2c5842e6a44cdce17e7a8c8414822b5552c24f7e2b4';
 
 app.get('/code', async (req, res) => {
 	const Token_Endpoint = `https://api.intra.42.fr/oauth/token`;
