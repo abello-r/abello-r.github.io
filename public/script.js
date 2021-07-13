@@ -8,14 +8,14 @@ function ft_get_code_from_url(name) {
 }
 
 let api_token = undefined; // Api token null
-//window.onload = api_token = ft_get_code_from_url('code'); // Api token step_1 (url)
-window.onload = api_token = ft_get_token(); // Api token from /private
+window.onload = api_token = ft_get_code_from_url('code'); // Api token step_1 (url)
+//window.onload = api_token = ft_get_token(); // Api token from /private
 
 console.log(api_token);
 
 function ft_get_token()
 {
-	fetch("https://42ring.es/private")
+	fetch("https://42ring.es/code")
 	.then(response=>response.json())
 	.then(datos=>
 	{
