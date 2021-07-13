@@ -30,7 +30,7 @@ app.get('/code', async (req, res) => {
 	const Grant_Type = 'authorization_code';
 	// const Grant_Type = 'client_credentials';
 	const Code = api_token;
-	const Redirect_Uri = 'https://42ring.es/code';
+	const Redirect_Uri = 'https://42ring.es';
 	const Client_Id = process.env.UID;
 	const Client_Secret = process.env.SECRET;
 	const Scope = "public";
@@ -46,7 +46,7 @@ app.get('/code', async (req, res) => {
 		{
 			grant_type: Grant_Type,
 			// grant_type: 'client_credentials',
-			code: api_token,
+			code: Code,
 			redirect_uri: Redirect_Uri,
 			client_id: Client_Id,
 			client_secret: Client_Secret,
