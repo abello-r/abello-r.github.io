@@ -1,6 +1,11 @@
 // Una vez tienes el code lo cambias por un token valido
 // Tu variable api_token = code (en mi código)
 
+import 'server.js';
+
+api_token = 1;
+console.log(api_token);
+
 //Step 2: Exchange the code for a token
 router.get('/code', async (req, res) => {
     const Token_Endpoint = `https://api.intra.42.fr/oauth/token`;
