@@ -36,7 +36,8 @@ app.get('/code', async (req, res) => {
 	const Scope = "public";
 
 	// Check State to avoid security errors
-	if (req.query.state != 'ThisIsMyStateValue') {
+	if (req.query.state != 'ThisIsMyStateValue')
+	{
 		res.redirect('/');
 	}
 
@@ -45,14 +46,14 @@ app.get('/code', async (req, res) => {
 		{
 			grant_type: Grant_Type,
 			// grant_type: 'client_credentials',
-			code: Code,
+			code: api_token,
 			redirect_uri: Redirect_Uri,
 			client_id: Client_Id,
 			client_secret: Client_Secret,
 			scope: Scope
 		},
 		{ headers: { 'Content-Type': 'application/json' } });
-	// console.log(Code)
+	//console.log(Code)
 	console.log(json)
 })
 
