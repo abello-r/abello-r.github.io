@@ -8,7 +8,7 @@ function getParameterByName(name) {
 }
 
 let api_token = undefined;
-window.onload = api_token = ft_get_token();
+window.onload = api_token = getParameterByName('code');
 console.log(api_token);
 
 function ft_get_token()
