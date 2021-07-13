@@ -1,14 +1,16 @@
 // Window Onload \\
 
-function getParameterByName(name) {
+function ft_get_code_from_url(name) {
 	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
 	results = regex.exec(location.search);
 	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-let api_token = undefined;
-window.onload = api_token = getParameterByName('code');
+let api_token = undefined; // Api token null
+//window.onload = api_token = ft_get_code_from_url('code'); // Api token step_1 (url)
+window.onload = api_token = ft_get_token(); // Api token from /private
+
 console.log(api_token);
 
 function ft_get_token()
@@ -36,7 +38,7 @@ function ft_token_info(api_token)
 	//ft_xp();
 }
 
-/********************************hola**************************************/
+/**********************************************************************/
 
 // Swap Image \\
 
