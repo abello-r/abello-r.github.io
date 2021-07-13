@@ -1,10 +1,7 @@
 // Una vez tienes el code lo cambias por un token valido
 // Tu variable api_token = code (en mi código)
 
-import 'server.js';
-
-api_token = 1;
-console.log(api_token);
+let api_token = 'c9bbf6b62579431a4fd2e2c5842e6a44cdce17e7a8c8414822b5552c24f7e2b4';
 
 //Step 2: Exchange the code for a token
 router.get('/code', async (req, res) => {
