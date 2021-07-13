@@ -25,12 +25,14 @@ app.get('/private', (req, res) => {
 	})
 });
 
+import '../public/script.js';
+
 app.get('/code', async (req, res) => {
 	const Token_Endpoint = `https://api.intra.42.fr/oauth/token`;
 	const Grant_Type = 'authorization_code';
 	// const Grant_Type = 'client_credentials';
 	const Code = api_token;
-	const Redirect_Uri = 'https://42ring.es';
+	const Redirect_Uri = 'https://42ring.es/code';
 	const Client_Id = process.env.UID;
 	const Client_Secret = process.env.SECRET;
 	const Scope = "public";
