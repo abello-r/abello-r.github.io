@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express();
 const config = require('./config.js');
-import axios from 'axios';
+require('dotenv').config()
+const axios = require('axios');
 
 // Una vez tienes el code lo cambias por un token valido
 // Tu variable api_token = code (en mi código)
@@ -19,14 +20,6 @@ router.get('/code', async (req, res) =>
 	const Client_Id = process.env.UID;
 	const Client_Secret = process.env.SECRET;
 	const Scope = "public";
-
-	// Check State to avoid security errors
-	if (req.query.state != 'ThisIsMyStateValue')
-	{
-		res.redirect('/');
-		console.log('Ha fallado el query state');
-		return
-	}
 
 	// log.info(`Body: ${body}`);
 	let json = await axios.post(Token_Endpoint,
