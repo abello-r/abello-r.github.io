@@ -43,7 +43,7 @@ router.get('/code', async (req, res) =>
 	console.log(json)
 })
 
-app.listen(config.PORT, () => {
+router.listen(config.PORT, () => {
 	console.log(`\
 
 Started [PORT 80] http://${config.HOST}:${config.PORT}`);
