@@ -20,12 +20,13 @@ router.get('/code', async (req, res) =>
 	const Client_Secret = process.env.SECRET;
 	const Scope = "public";
 
-	/* Check State to avoid security errors
+	// Check State to avoid security errors
 	if (req.query.state != 'ThisIsMyStateValue')
 	{
 		res.redirect('/');
 		console.log('Ha fallado el query state');
-	}*/
+		return
+	}
 
 	// log.info(`Body: ${body}`);
 	let json = await axios.post(Token_Endpoint,
