@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express();
 const config = require('./config.js');
-const axios = require('axios');
+import axios from 'axios';
 
 // Una vez tienes el code lo cambias por un token valido
 // Tu variable api_token = code (en mi código)
