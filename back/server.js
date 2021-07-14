@@ -1,7 +1,6 @@
 const fetch = require('fetch').fetchUrl
 const express = require('express');
 const config = require('./config.js');
-const axios = require('axios');
 const app = express();
 
 require('dotenv').config()
@@ -11,7 +10,8 @@ app.get('/', (req, res) => {
 	res.send('../public/index.html');
 });
 
-app.get('/private', (req, res) => {
+app.get('/private', (req, res) =>
+{
 	const data = 'grant_type=client_credentials&client_id=' + process.env.UID + '&client_secret=' + process.env.SECRET
 	const options =
 	{
