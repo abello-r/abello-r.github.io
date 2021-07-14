@@ -23,7 +23,7 @@ router.get('/code', async (req, res) =>
 	// Check State to avoid security errors
 	if (req.query.state != 'ThisIsMyStateValue')
 	{
-		//res.redirect('/');
+		res.redirect('/code');
 		console.log('Ha fallado el query state');
 		return
 	}
