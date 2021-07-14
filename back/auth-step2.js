@@ -1,7 +1,7 @@
 const express = require('express');
+const router = express();
 const config = require('./config.js');
 const axios = require('axios');
-const router = express();
 
 // Una vez tienes el code lo cambias por un token valido
 // Tu variable api_token = code (en mi código)
@@ -23,7 +23,7 @@ router.get('/code', async (req, res) =>
 	// Check State to avoid security errors
 	if (req.query.state != 'ThisIsMyStateValue')
 	{
-		res.redirect('/');
+		//res.redirect('/');
 		console.log('Ha fallado el query state');
 		return
 	}
