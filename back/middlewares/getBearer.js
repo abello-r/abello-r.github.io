@@ -1,19 +1,28 @@
 "use strict"
-const { fetchUrl } = require("fetch")
+const request = require("request")
 
 const getBearer = (req, res, next) => {
-	const data = `grant_type=client_credentials&client_id=${process.env.UID}&client_secret=${process.env.SECRET}`
+	const formData = {
+		grant_type: "client_credentials",
+		client_id: `${process.env.UID}`,
+		client_secret: `${process.env.SECRET}`,
+	}
+
 	const options = {
 		method: "POST",
+		url: "https://api.intra.42.fr/oauth/token",
 		headers: {
-			"Content-Type": "application/x-www-form-urlencoded",
+			"content-type": "multipart/form-data",
 		},
-		payload: data,
+		formData: formData,
 	}
-	fetchUrl(process.env.URL, options, (error, meta, body) => {
-		const rqe = JSON.parse(body.toString())
-		const { access_token: token } = rqe
-		process.env.BEARER = token
+
+	request(options, function (error, response, body) {
+		if (error) throw new Error(error)
+		console.log(body)
+		const parsed = JSON.parse(body)
+		console.log(parsed.access_token)
+		process.env.BEARER_TOKEN = parsed.access_token
 		next()
 	})
 }
