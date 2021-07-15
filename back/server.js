@@ -7,9 +7,10 @@ const { getBearer } = require(path.resolve("./middlewares/getBearer.js"))
 
 require("dotenv").config()
 app.use("/public", express.static(path.resolve("../public")))
+app.use("/src", express.static(path.resolve("../public/src")))
 
 app.get("/", getBearer, (req, res) => {
-	res.sendFile(path.resolve("../index.html"))
+	res.sendFile(path.resolve("../public/index.html"))
 })
 
 app.get("/:login1/:login2", getBearer, (req, res, next) => {
