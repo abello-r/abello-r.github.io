@@ -96,16 +96,14 @@ function ft_xp() // Funcion de llamadas de prueba
 function ft_get_data_user(e)
 {
 	user = document.getElementById("username").value;
+	user_2 = document.getElementById("username_two").value;
 
 	if (e !== undefined)
 	e.preventDefault();
-	fetch(`https://api.intra.42.fr/v2/users/${user}`,{
-		mode: 'no-cors',
-		headers:
-			{
-				Authorization: `Bearer ${api_token}`
-			}
-		})
+	fetch(`/${user}/${user_2}`,
+	{
+		
+	})
 		.then(response=>response.json())
 		.then(async (datos)=>
 		{
