@@ -13,6 +13,10 @@ app.get("/", getBearer, (req, res) => {
 	res.sendFile(path.resolve("../public/index.html"))
 })
 
+app.get("/ring.html", getBearer, (req, res) => {
+	res.sendFile(path.resolve("../public/ring.html"))
+})
+
 app.get("/:login1/:login2", getBearer, (req, res, next) => {
 	if (req.originalUrl.startsWith("/404")) return next()
 	const options = {
