@@ -8,6 +8,8 @@ const { getBearer } = require(path.resolve("./middlewares/getBearer.js"))
 require("dotenv").config()
 app.use("/public", express.static(path.resolve("../public")))
 app.use("/src", express.static(path.resolve("../public/src")))
+app.use("/src", express.static(path.resolve("../public/ring.html")))
+
 
 app.get("/", getBearer, (req, res) => {
 	res.sendFile(path.resolve("../public/index.html"))
