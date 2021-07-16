@@ -15,8 +15,20 @@ app.get("/", getBearer, (req, res) => {
 	res.sendFile(path.resolve("../public/index.html"))
 })
 
+app.get("/ring", getBearer, (req, res) => {
+	res.sendFile(path.resolve("../public/ring.html"))
+})
+
+/*
+ ** Get ${login1} vs ${login2} power
+ */
+
 app.get("/:login1/:login2", getBearer, (req, res, next) => {
 	if (req.originalUrl.startsWith("/404")) return next()
+	if (req.params.login1 === req.params.login2)
+		return res
+			.status(418)
+			.json(`Fighting ${req.params.login1} vs ${req.params.login2}...`)
 	const options = {
 		method: "GET",
 		url: `https://api.intra.42.fr/v2/users/${req.params.login1}`,
