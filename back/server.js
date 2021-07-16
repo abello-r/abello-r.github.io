@@ -10,17 +10,22 @@ app.use("/public", express.static(path.resolve("../public")))
 app.use("/src", express.static(path.resolve("../public/src")))
 app.use("/src", express.static(path.resolve("../public/ring.html")))
 
-
 app.get("/", getBearer, (req, res) => {
 	res.sendFile(path.resolve("../public/index.html"))
 })
 
 app.get("/ring", getBearer, (req, res) => {
+	console.log(`Code: ${req.query.code}`)
 	res.sendFile(path.resolve("../public/ring.html"))
 })
 
 /*
- ** Get ${login1} vs ${login2} power
+ ** GET /{login1}/${login2}
+ ** Returns the power of each login with a status of 200
+ ** 	and all the data (login and power) is sent in a json array.
+ ** In case of same login, returns an error and a status 418
+ ** If any login does not exist, then a status of 404 is returned
+ ** 	and an error mesage inside "error" in json
  */
 
 app.get("/:login1/:login2", getBearer, (req, res, next) => {
@@ -41,7 +46,10 @@ app.get("/:login1/:login2", getBearer, (req, res, next) => {
 		if (error) throw new Error(error)
 
 		console.log(body)
-		if (response.statusCode != 200) return res.redirect("/404")
+		if (response.statusCode != 200)
+			return res
+				.status(404)
+				.json({ error: `${req.params.login1} is not a valid user` })
 		const parsed1 = await JSON.parse(body)
 		const options = {
 			method: "GET",
@@ -54,7 +62,10 @@ app.get("/:login1/:login2", getBearer, (req, res, next) => {
 			if (error) throw new Error(error)
 
 			console.log(body)
-			if (response.statusCode != 200) return res.redirect("/404")
+			if (response.statusCode != 200)
+				return res
+					.status(404)
+					.json({ error: `${req.params.login2} is not a valid user` })
 			const parsed = await JSON.parse(body)
 			/*
 			 ** datos.correction_point) +
@@ -72,9 +83,17 @@ app.get("/:login1/:login2", getBearer, (req, res, next) => {
 				parsed.wallet +
 				parsed.achievements.length +
 				parsed.projects_users.length * 0.5
-			res.json([
-				{ login: parsed1.login, power: power1 },
-				{ login: parsed.login, power: power2 },
+			res.status(200).json([
+				{
+					login: parsed1.login,
+					power: power1,
+					first_name: parsed1.first_name,
+				},
+				{
+					login: parsed.login,
+					power: power2,
+					first_name: parsed.first_name,
+				},
 			])
 			// res.render(path.resolve("src/ejs/profile.ejs"), { user: parsed })
 		})
@@ -83,7 +102,10 @@ app.get("/:login1/:login2", getBearer, (req, res, next) => {
 })
 
 app.get("/private", getBearer, (req, res) => {
-	res.json({ token: process.env.BEARER_TOKEN })
+	res.json({
+		token: process.env.BEARER_TOKEN,
+		info: "This route will not available soon",
+	})
 })
 
 app.get("*", (req, res) => {
