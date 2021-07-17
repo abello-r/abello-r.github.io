@@ -6,7 +6,7 @@ The application compares the power of both, and chooses as the winner the studen
 
 It also allows you to choose a character that includes 3 victory phrases to stun the opponent.
 
-
+<img src="https://github.com/abello-r/abello-r.github.io/blob/master/public/src/front.png">
 
 # How to use 42 ring? (SERVER)
 
