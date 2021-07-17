@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const router = express();
 const config = require('./config.js');
 require('dotenv').config()
@@ -44,3 +44,4 @@ Started [PORT 80] http://${config.HOST}:${config.PORT}`);
 	console.log(`\ 
 If you have this problem [localhost refused to connect], Check that in the backend directory, the .env file has the correct data.`);
 });
+/*

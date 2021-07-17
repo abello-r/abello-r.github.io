@@ -11,8 +11,6 @@ function ft_get_code_from_url(name)
 let api_token = undefined // Api token null
 window.onload = api_token = ft_get_code_from_url("code") // Api token step_1 (url)
 
-// console.log(api_token)
-
 function ft_get_token()
 {
 	fetch("https://42ring.es/code")
@@ -20,7 +18,7 @@ function ft_get_token()
 		.then((datos) =>
 		{
 			api_token = datos.token
-			console.log(api_token)
+			console.log("A new user joined in 42 Ring")
 			ft_token_info(datos.token)
 		})
 }
