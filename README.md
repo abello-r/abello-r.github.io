@@ -12,9 +12,11 @@ It also allows you to choose a character that includes 3 victory phrases to stun
 
 1. https://42ring.es/
 2. Log in with your intranet.
-3. Play.
 
 <img src="https://github.com/abello-r/abello-r.github.io/blob/master/public/src/login.png">
+
+3. Play.
+<img src="https://github.com/abello-r/abello-r.github.io/blob/master/public/src/42ring_front.png">
 
 # How to use 42 ring? (SERVER)
 
@@ -30,9 +32,5 @@ It also allows you to choose a character that includes 3 victory phrases to stun
 * Bash .new_key.sh #to change the UID key and the SECRET key.
 ```
 
-# Avalaible on
-
-https://42ring.es/
 
 
-<img src="https://github.com/abello-r/abello-r.github.io/blob/master/public/src/42ring_front.png">
