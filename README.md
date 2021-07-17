@@ -20,6 +20,12 @@ It also allows you to choose a character that includes 3 victory phrases to stun
 
 # How to use 42 ring? (SERVER)
 
+If you are a staff, you will have the ssh keys to enter the server.
+
+<img src="https://github.com/abello-r/abello-r.github.io/blob/master/public/src/ssh.png">
+
+Once inside, you have the following scripts at your disposal.
+
 ```
 * Bash .run.sh #to start the server.
 ```
