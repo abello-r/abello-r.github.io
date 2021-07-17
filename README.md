@@ -1,3 +1,13 @@
+# What is 42Ring ?
+
+It is a project created with the purpose of evaluating 2 users through the intranet, accessing their public data with the api, for example, correction points, wallet points, projects delivered, achievements, level of experience, all this adds up together for create a "variable power" modified by a "luck" factor.
+
+The application compares the power of both, and chooses as the winner the student or staff with the most power.
+
+It also allows you to choose a character that includes 3 victory phrases to stun the opponent.
+
+
+
 # 42 | Ring (API)
 
 ```
