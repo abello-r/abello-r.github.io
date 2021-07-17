@@ -14,6 +14,7 @@ It also allows you to choose a character that includes 3 victory phrases to stun
 2. Log in with your intranet.
 3. Play.
 
+<img src="https://github.com/abello-r/abello-r.github.io/blob/master/public/src/login.png">
 
 # How to use 42 ring? (SERVER)
 
