@@ -28,21 +28,23 @@ app.get("/ring", getBearer, (req, res) => {
  ** 	and an error mesage inside "error" in json
  */
 
-app.get("/:login1/:login2", getBearer, (req, res, next) => {
-	if (req.originalUrl.startsWith("/404")) return next()
+app.get("/:login1/:login2", getBearer, (req, res, next) =>
+{
+	if (req.originalUrl.startsWith("/404"))
+		return next()
 	if (req.params.login1 === req.params.login2)
 		return res
 			.status(418)
 			.json(`Fighting ${req.params.login1} vs ${req.params.login2}...`)
-	const options = {
+	const options =
+	{
 		method: "GET",
 		url: `https://api.intra.42.fr/v2/users/${req.params.login1}`,
-		headers: {
-			Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
-		},
+		headers: {	Authorization: `Bearer ${process.env.BEARER_TOKEN}` },
 	}
 
-	request(options, async (error, response, body) => {
+	request(options, async (error, response, body) =>
+	{
 		if (error) throw new Error(error)
 
 		console.log(body)
@@ -51,14 +53,14 @@ app.get("/:login1/:login2", getBearer, (req, res, next) => {
 				.status(404)
 				.json({ error: `${req.params.login1} is not a valid user` })
 		const parsed1 = await JSON.parse(body)
-		const options = {
+		const options =
+		{
 			method: "GET",
 			url: `https://api.intra.42.fr/v2/users/${req.params.login2}`,
-			headers: {
-				Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
-			},
+			headers: { Authorization: `Bearer ${process.env.BEARER_TOKEN}` },
 		}
-		request(options, async (error, response, body) => {
+		request(options, async (error, response, body) =>
+		{
 			if (error) throw new Error(error)
 
 			console.log(body)
@@ -67,12 +69,6 @@ app.get("/:login1/:login2", getBearer, (req, res, next) => {
 					.status(404)
 					.json({ error: `${req.params.login2} is not a valid user` })
 			const parsed = await JSON.parse(body)
-			/*
-			 ** datos.correction_point) +
-			 ** datos.wallet +
-			 ** datos.achievements.length +
-			 **	datos.projects_users.length * 0.5
-			 */
 			const power1 =
 				parsed1.correction_point +
 				parsed1.wallet +
@@ -101,18 +97,21 @@ app.get("/:login1/:login2", getBearer, (req, res, next) => {
 	})
 })
 
-app.get("/private", getBearer, (req, res) => {
+app.get("/private", getBearer, (req, res) =>
+{
 	res.json({
 		token: process.env.BEARER_TOKEN,
 		info: "This route will not available soon",
 	})
 })
 
-app.get("*", (req, res) => {
+app.get("*", (req, res) =>
+{
 	res.send("404 :(")
 })
 
-app.listen(config.PORT, () => {
+app.listen(config.PORT, () =>
+{
 	console.log(
 		`Started [PORT ${config.PORT}] http://${config.HOST}:${config.PORT}`
 	)
