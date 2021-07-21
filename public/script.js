@@ -1,41 +1,5 @@
 // Window Onload \\
 
-function ft_get_code_from_url(name)
-{
-	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]")
-	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-	results = regex.exec(location.search)
-	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "))
-}
-
-let api_token = undefined // Api token null
-window.onload = api_token = ft_get_code_from_url("code") // Api token step_1 (url)
-
-function ft_get_token()
-{
-	fetch("https://42ring.es/code")
-		.then((response) => response.json())
-		.then((datos) =>
-		{
-			api_token = datos.token
-			console.log("A new user joined in 42 Ring")
-			ft_token_info(datos.token)
-		})
-}
-
-function ft_token_info(api_token)
-{
-	fetch("https://api.intra.42.fr/oauth/token/info",
-	{
-		mode: "no-cors",
-		headers:
-		{
-			Authorization: `Bearer ${api_token}`,
-		},
-	}).then((response) => response.json())
-	//ft_xp();
-}
-
 /**********************************************************************/
 
 // Swap Image \\
@@ -74,21 +38,6 @@ button_fight.onclick = (e) => ft_fight(e) //	When press "FIGHT" buttom.
 async function ft_fight(e)
 {
 	ft_get_data_user(e)
-}
-
-// Funcion de llamadas de prueba
-
-function ft_xp() 
-{
-	fetch(`https://api.intra.42.fr/v2/campus/22/users/?page=6/sort=pool_year=2019"`,
-	{
-		headers: {Authorization: `Bearer ${api_token}`},
-	})
-		.then((reponse) => response.json())
-		.then(async (datos) =>
-		{
-			console.log(await datos)
-		})
 }
 
 function ft_get_data_user(e)
