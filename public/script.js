@@ -51,7 +51,6 @@ function ft_get_data_user(e)
 		.then((response) => response.json())
 		.then(async (datos) =>
 		{
-			console.log(datos)
 			player_one = await datos[0].first_name
 			player_two = await datos[1].first_name
 
