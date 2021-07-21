@@ -1,23 +1,49 @@
+/*-----------------------------------Requeriments--------------------------------------------*/
+
 const express = require("express")
+const app = express()
+
 const config = require("./config.js")
 const path = require("path")
-const app = express()
 const request = require("request")
 const { getBearer } = require(path.resolve("./middlewares/getBearer.js"))
 
 require("dotenv").config()
+
 app.use("/public", express.static(path.resolve("../public")))
 app.use("/src", express.static(path.resolve("../public/src")))
 app.use("/src", express.static(path.resolve("../public/ring.html")))
 
+/*--------------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------CallBacks--------------------------------------------*/
+
 app.get("/", getBearer, (req, res) => {
-	res.sendFile(path.resolve("../public/index.html"))
+	res.sendFile(path.resolve("../public/index.html"))	// Public Login
 })
 
 app.get("/ring", getBearer, (req, res) => {
 	console.log(`Code: ${req.query.code}`)
-	res.sendFile(path.resolve("../public/ring.html"))
+	res.sendFile(path.resolve("../public/ring.html"))	// Ring Zone
 })
+
+app.get("/private", getBearer, (req, res) =>
+{
+	res.json({
+		token: process.env.BEARER_TOKEN,				// Hidden Token
+		info: "This route will not available soon",
+	})
+})
+
+app.get("*", (req, res) =>
+{
+	res.send("404 Page not found, come back buddy :(")									// All Bad Requests
+})
+
+/*--------------------------------------------------------------------------------*/
+
 
 /*
  ** GET /{login1}/${login2}
@@ -68,18 +94,26 @@ app.get("/:login1/:login2", getBearer, (req, res, next) =>
 				return res
 					.status(404)
 					.json({ error: `${req.params.login2} is not a valid user` })
-			const parsed = await JSON.parse(body)
+					const parsed = await JSON.parse(body)
+					
+
+			/*------------------------------------------------------------------------------*/		
+			// Calculate POWER PLAYER ONE
 			const power1 =
-				parsed1.correction_point +
+				parsed1.correction_point + 
 				parsed1.wallet +
 				parsed1.achievements.length +
 				parsed1.projects_users.length * 0.5
+			
+			// Calculate POWER PLAYER TWO
 			const power2 =
 				parsed.correction_point +
 				parsed.wallet +
 				parsed.achievements.length +
 				parsed.projects_users.length * 0.5
-			res.status(200).json([
+			/*------------------------------------------------------------------------------*/
+
+				res.status(200).json([
 				{
 					login: parsed1.login,
 					power: power1,
@@ -97,18 +131,8 @@ app.get("/:login1/:login2", getBearer, (req, res, next) =>
 	})
 })
 
-app.get("/private", getBearer, (req, res) =>
-{
-	res.json({
-		token: process.env.BEARER_TOKEN,
-		info: "This route will not available soon",
-	})
-})
 
-app.get("*", (req, res) =>
-{
-	res.send("404 :(")
-})
+/*-----------------------------------App Listen--------------------------------------------*/
 
 app.listen(config.PORT, () =>
 {
@@ -119,3 +143,5 @@ app.listen(config.PORT, () =>
 	console.log(`If you have this problem [localhost refused to connect],\
 	Check that in the backend directory, the .env file has the correct data.`)
 })
+
+/*---------------------------------------------------------------------------------------------*/
