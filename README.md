@@ -10,7 +10,7 @@ It also allows you to choose a character that includes 3 victory phrases to stun
 
 # How to use 42 ring? (CLIENT)
 
-1. https://42ring.es/
+1. https://42ring.es/ || localhost:3000
 2. Log in with your intranet.
 
 <img src="https://github.com/abello-r/abello-r.github.io/blob/master/public/src/login.png">
